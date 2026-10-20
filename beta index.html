@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisGuard Cybersecurity | Portal Oficial de Seguridad</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyberDark: '#0B0F19',
+                        cyberPanel: '#111827',
+                        cyberAccent: '#06B6D4',
+                        cyberGreen: '#10B981',
+                        cyberRed: '#EF4444'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-cyberDark text-gray-200 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-cyberPanel/90 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid font-bold fa-shield-halved text-cyberAccent text-3xl"></i>
+                <span class="text-xl font-bold tracking-wider text-white">AEGIS<span class="text-cyberAccent">GUARD</span></span>
+            </div>
+            <nav class="flex flex-wrap space-x-2 md:space-x-4 text-sm mt-2 md:mt-0" id="main-nav">
+                <button onclick="showTab('sec1', this)" class="nav-btn px-3 py-2 rounded bg-cyberAccent text-black font-semibold">1. Marco Legal</button>
+                <button onclick="showTab('sec2', this)" class="nav-btn px-3 py-2 rounded text-gray-200 hover:bg-gray-800 transition">2. Arquitectura</button>
+                <button onclick="showTab('sec3', this)" class="nav-btn px-3 py-2 rounded text-gray-200 hover:bg-gray-800 transition">3. Manual Operativo</button>
+                <button onclick="showTab('sec4', this)" class="nav-btn px-3 py-2 rounded text-gray-200 hover:bg-gray-800 transition">4. Matriz Técnica</button>
+                <button onclick="showTab('sec5', this)" class="nav-btn px-3 py-2 rounded text-gray-200 hover:bg-gray-800 transition">5. Simulacro Ataque</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow">
+
+        <!-- SECCIÓN 1: POLÍTICA Y MARCO LEGAL -->
+        <section id="sec1" class="tab-content space-y-6 block">
+            <div class="bg-cyberPanel p-6 md:p-8 rounded-lg border border-gray-800 shadow-xl">
+                <h1 class="text-2xl font-bold text-cyberAccent border-b border-gray-700 pb-3 mb-6">
+                    <i class="fa-solid fa-scale-balanced mr-2"></i>Sección 1: Marco Conceptual, Política Corporativa y Legislación
+                </h1>
+                
+                <div class="mb-8 space-y-4 text-gray-300 leading-relaxed text-justify">
+                    <h2 class="text-lg font-bold text-white">1.1 Propósito del Protocolo de Ciberseguridad</h2>
+                    <p>El presente documento constituye el estándar normativo, técnico y operativo de carácter estricto para <strong>AegisGuard Cybersecurity</strong>. Su objetivo fundamental es definir la arquitectura de defensa en profundidad, establecer las reglas de flujo de datos y estandarizar la capacidad de respuesta ante incidentes para proteger la <strong>Triada CID (Confidencialidad, Integridad y Disponibilidad)</strong> de nuestros activos de información.</p>
+                </div>
+
+                <h2 class="text-lg font-bold text-white mb-4">1.2 Cumplimiento Normativo Colombiano</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                        <h3 class="font-bold text-lg text-white mb-3"><i class="fa-solid fa-gavel text-cyberAccent mr-2"></i>Ley 1273 de 2009</h3>
+                        <p class="text-sm text-gray-400 mb-3"><strong>Protección de la Información y Delitos Informáticos.</strong></p>
+                        <p class="text-sm text-gray-400 text-justify">Nuestra arquitectura previene el Acceso Abusivo (Art. 269A) y el Daño Informático (Art. 269D). El SIEM centralizado preserva los logs garantizando la cadena de custodia probatoria.</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                        <h3 class="font-bold text-lg text-white mb-3"><i class="fa-solid fa-user-shield text-cyberAccent mr-2"></i>Ley 1581 de 2012</h3>
+                        <p class="text-sm text-gray-400 mb-3"><strong>Protección de Datos Personales (Habeas Data).</strong></p>
+                        <p class="text-sm text-gray-400 text-justify">Cumplimos aislando la VLAN de Bases de Datos con encriptación fuerte: TLS 1.3 para tránsito y AES-256 para reposo.</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                        <h3 class="font-bold text-lg text-white mb-3"><i class="fa-solid fa-landmark text-cyberAccent mr-2"></i>CONPES 3854 / 3995</h3>
+                        <p class="text-sm text-gray-400 mb-3"><strong>Política Nacional de Seguridad Digital.</strong></p>
+                        <p class="text-sm text-gray-400 text-justify">Implementamos un modelo de resiliencia operativa y un flujo de notificación temprana de vulnerabilidades ante el ColCERT.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ARQUITECTURA Y DIAGRAMAS DE RED -->
+        <section id="sec2" class="tab-content hidden space-y-6">
+            <div class="bg-cyberPanel p-6 md:p-8 rounded-lg border border-gray-800 shadow-xl">
+                <h1 class="text-2xl font-bold text-cyberAccent border-b border-gray-700 pb-3 mb-6">
+                    <i class="fa-solid fa-network-wired mr-2"></i>Sección 2: Arquitectura de Red y Diagramación Técnica
+                </h1>
+
+                <!-- DIAGRAMA 1 -->
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 mb-8">
+                    <h2 class="text-xl font-bold text-white mb-3">Diagrama 1: Arquitectura Física y Lógica de Red</h2>
+                    
+                    <div class="my-6">
+                        <img src="diagrama-red.jpeg" alt="Arquitectura Física y Lógica de Red" class="w-full max-w-2xl mx-auto rounded-lg border border-gray-700 shadow-xl">
+                    </div>
+
+                    <div class="text-sm space-y-4 text-gray-300 mt-4 border-t border-gray-800 pt-4">
+                        <h3 class="font-bold text-white text-base">Justificación Técnica del Posicionamiento:</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-justify">
+                            <li><strong>Segmentación por Zonas:</strong> Separación estricta entre WAN, DMZ, LAN Interna y VLAN de Gestión.</li>
+                            <li><strong>Firewall Perimetral:</strong> Ubicado en la frontera con el ISP para mitigar DDoS y bloquear IPs externas de alto riesgo.</li>
+                            <li><strong>NGFW Interno:</strong> Inspección Profunda de Paquetes (DPI) e IPS/IDS justo antes de que el tráfico llegue a los equipos internos.</li>
+                            <li><strong>VLAN Aislada:</strong> El SIEM se aísla mediante ACLs para que un atacante en la LAN no pueda borrar los logs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DIAGRAMA 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                    <h2 class="text-xl font-bold text-white mb-3">Diagrama 2: Flujo de Datos e Inspección de Tráfico</h2>
+                    
+                    <div class="my-6">
+                        <img src="diagrama-flujo.jpeg" alt="Flujo de Datos e Inspección" class="w-full max-w-2xl mx-auto rounded-lg border border-gray-700 shadow-xl">
+                    </div>
+
+                    <div class="text-sm space-y-4 text-gray-300 mt-4 border-t border-gray-800 pt-4">
+                        <h3 class="font-bold text-white text-base">Secuencia de Inspección y Filtrado:</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-justify">
+                            <li><strong>Filtrado WAF DMZ:</strong> Intercepta el tráfico web para buscar inyecciones SQL o XSS (OWASP Top 10).</li>
+                            <li><strong>IPS NGFW:</strong> Identifica dominios y patrones de malware o firmas de red anómalas.</li>
+                            <li><strong>EDR Endpoint:</strong> Si el malware llega al PC, evalúa el comportamiento en RAM (intento de cifrado) y aísla la red automáticamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: MANUAL OPERATIVO -->
+        <section id="sec3" class="tab-content hidden space-y-6">
+            <div class="bg-cyberPanel p-6 md:p-8 rounded-lg border border-gray-800 shadow-xl">
+                <h1 class="text-2xl font-bold text-cyberAccent border-b border-gray-700 pb-3 mb-6">
+                    <i class="fa-solid fa-list-check mr-2"></i>Sección 3: Manual Operativo de Respuesta ante Incidentes
+                </h1>
+
+                <p class="text-gray-400 text-sm mb-4 italic">Utilice la siguiente lista de chequeo interactiva para llevar el control temporal durante un incidente:</p>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberAccent shadow-md">
+                        <h2 class="font-bold text-cyberAccent text-lg mb-4 border-b border-gray-800 pb-2">FASE 1: Antes del Ataque</h2>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberAccent focus:ring-0" id="chk1" onchange="saveCheck('chk1')">
+                                <label for="chk1" class="text-gray-300"><strong>Configuración "Deny All":</strong> Política implícita de denegación en Firewalls perimetrales.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberAccent focus:ring-0" id="chk2" onchange="saveCheck('chk2')">
+                                <label for="chk2" class="text-gray-300"><strong>MFA:</strong> Autenticación Multifactor obligatoria activa en todas las cuentas corporativas.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberAccent focus:ring-0" id="chk3" onchange="saveCheck('chk3')">
+                                <label for="chk3" class="text-gray-300"><strong>Backup 3-2-1:</strong> 3 copias de seguridad, 2 medios diferentes, 1 copia offsite inmutable.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberRed shadow-md">
+                        <h2 class="font-bold text-cyberRed text-lg mb-4 border-b border-gray-800 pb-2">FASE 2: Durante el Ataque</h2>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberRed focus:ring-0" id="chk5" onchange="saveCheck('chk5')">
+                                <label for="chk5" class="text-gray-300"><strong>Línea de Mando:</strong> Activación oficial del CSIRT y puente de comunicaciones alterno.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberRed focus:ring-0" id="chk6" onchange="saveCheck('chk6')">
+                                <label for="chk6" class="text-gray-300"><strong>Aislamiento:</strong> Desconexión lógica vía consola EDR de las estaciones comprometidas.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberRed focus:ring-0" id="chk8" onchange="saveCheck('chk8')">
+                                <label for="chk8" class="text-gray-300"><strong>Preservación:</strong> Captura estática de la RAM y volcado de logs para cadena de custodia.</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberGreen shadow-md">
+                        <h2 class="font-bold text-cyberGreen text-lg mb-4 border-b border-gray-800 pb-2">FASE 3: Después del Ataque</h2>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberGreen focus:ring-0" id="chk9" onchange="saveCheck('chk9')">
+                                <label for="chk9" class="text-gray-300"><strong>Restauración:</strong> Formateo completo y despliegue exclusivo de copias de seguridad limpias.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberGreen focus:ring-0" id="chk10" onchange="saveCheck('chk10')">
+                                <label for="chk10" class="text-gray-300"><strong>Notificación Legal:</strong> Reporte del incidente a la SIC (Habeas Data) y al ColCERT.</label>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <input type="checkbox" class="mt-1 w-5 h-5 rounded bg-gray-800 border-gray-700 text-cyberGreen focus:ring-0" id="chk12" onchange="saveCheck('chk12')">
+                                <label for="chk12" class="text-gray-300"><strong>Retroalimentación:</strong> Creación de nuevas reglas en WAF/NGFW e importación de firmas EDR.</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MATRIZ TÉCNICA -->
+        <section id="sec4" class="tab-content hidden space-y-6">
+            <div class="bg-cyberPanel p-6 md:p-8 rounded-lg border border-gray-800 shadow-xl overflow-x-auto">
+                <h1 class="text-2xl font-bold text-cyberAccent border-b border-gray-700 pb-3 mb-6">
+                    <i class="fa-solid fa-sliders mr-2"></i>Sección 4: Matriz de Configuración Técnica y Reglas Operativas
+                </h1>
+
+                <table class="w-full text-left border-collapse text-sm bg-gray-900 rounded-lg overflow-hidden">
+                    <thead>
+                        <tr class="bg-gray-800 text-cyberAccent">
+                            <th class="p-4 font-bold border-b border-gray-700">Tecnología</th>
+                            <th class="p-4 font-bold border-b border-gray-700">Ubicación Red</th>
+                            <th class="p-4 font-bold border-b border-gray-700">Regla Aplicada</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800 text-gray-300">
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-4 font-semibold text-white">FW Perimetral</td>
+                            <td class="p-4">Frontera con ISP / WAN</td>
+                            <td class="p-4">
+                                <pre class="font-mono text-xs bg-gray-950 text-green-400 p-2 rounded">set srcaddr "all" dstaddr "WEB_SRV"</pre>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-4 font-semibold text-white">Next-Gen FW</td>
+                            <td class="p-4">Entre DMZ y LAN Interna</td>
+                            <td class="p-4">
+                                <pre class="font-mono text-xs bg-gray-950 text-green-400 p-2 rounded">set ssl-ssh-profile "deep-inspection"</pre>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-4 font-semibold text-white">WAF</td>
+                            <td class="p-4">Proxy Inverso frente a DMZ</td>
+                            <td class="p-4">
+                                <pre class="font-mono text-xs bg-gray-950 text-green-400 p-2 rounded">SecRule REQUEST_COOKIES "@detectSQLi"</pre>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition">
+                            <td class="p-4 font-semibold text-white">EDR Host</td>
+                            <td class="p-4">Servidores y Laptops LAN</td>
+                            <td class="p-4">
+                                <pre class="font-mono text-xs bg-gray-950 text-green-400 p-2 rounded">-AutoIsolateHost $true -Action Terminate</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: SIMULACRO DE ATAQUE -->
+        <section id="sec5" class="tab-content hidden space-y-6">
+            <div class="bg-cyberPanel p-6 md:p-8 rounded-lg border border-gray-800 shadow-xl">
+                <h1 class="text-2xl font-bold text-cyberAccent border-b border-gray-700 pb-3 mb-6">
+                    <i class="fa-solid fa-bug mr-2"></i>Sección 5: Simulacro de Ataque (Ransomware)
+                </h1>
+
+                <div class="space-y-6 text-sm text-gray-300">
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberAccent">
+                        <h3 class="font-bold text-white text-lg">1. Vector (Phishing)</h3>
+                        <p>Empleado ejecuta archivo adjunto PDF malicioso, iniciando script oculto en segundo plano.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberRed">
+                        <h3 class="font-bold text-white text-lg">2. Detección EDR</h3>
+                        <p>El agente detecta escritura criptográfica anómala en RAM y suspende el proceso PID:4492.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h3 class="font-bold text-white text-lg">3. Bloqueo C2 (NGFW)</h3>
+                        <p>NGFW bloquea salida TCP hacia el servidor Comando y Control basado en base de firmas de IPS.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberRed">
+                        <h3 class="font-bold text-white text-lg">4. Aislamiento</h3>
+                        <p>El EDR desconecta la interfaz de red lógica del equipo para evitar movimiento lateral en la LAN.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-cyberGreen">
+                        <h3 class="font-bold text-white text-lg">5. Forense y Recuperación</h3>
+                        <p>El SIEM guarda evidencia de logs para la cadena de custodia. TI formatea y restaura desde backup.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-cyberPanel border-t border-gray-800 py-8 text-center text-xs text-gray-500">
+        <p class="mb-2 font-semibold text-gray-400 text-sm">© 2026 AegisGuard Cybersecurity — Arquitectura Defensiva</p>
+    </footer>
+
+    <!-- SCRIPT CORREGIDO PARA PESTAÑAS -->
+    <script>
+        function showTab(tabId, btnElement) {
+            // 1. Ocultar todos los bloques de contenido
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => {
+                tab.classList.remove('block');
+                tab.classList.add('hidden');
+            });
+
+            // 2. Reiniciar estilo de todos los botones
+            const allBtns = document.querySelectorAll('.nav-btn');
+            allBtns.forEach(btn => {
+                btn.classList.remove('bg-cyberAccent', 'text-black', 'font-semibold');
+                btn.classList.add('text-gray-200', 'hover:bg-gray-800');
+            });
+
+            // 3. Mostrar el contenido deseado
+            const targetTab = document.getElementById(tabId);
+            if(targetTab) {
+                targetTab.classList.remove('hidden');
+                targetTab.classList.add('block');
+            }
+
+            // 4. Activar estilo del botón seleccionado
+            if(btnElement) {
+                btnElement.classList.remove('text-gray-200', 'hover:bg-gray-800');
+                btnElement.classList.add('bg-cyberAccent', 'text-black', 'font-semibold');
+            }
+        }
+
+        // Sistema para guardar el estado de las casillas de verificación
+        function saveCheck(id) {
+            const checkbox = document.getElementById(id);
+            if (checkbox) {
+                localStorage.setItem(id, checkbox.checked);
+            }
+        }
+
+        // Cargar estado al iniciar
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type="checkbox"]').forEach(chk => {
+                const saved = localStorage.getItem(chk.id);
+                if (saved !== null) {
+                    chk.checked = (saved === 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
